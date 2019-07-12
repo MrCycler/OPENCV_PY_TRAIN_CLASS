@@ -1,6 +1,10 @@
 import os
 
 def create_pos_n_neg():
+
+    print("\n")
+    print("Creando archivo bg.txt")
+    print("\n")
     for file_type in ['neg']:
         
         for img in os.listdir(file_type):
@@ -13,4 +17,17 @@ def create_pos_n_neg():
                 line = file_type+'/'+img+'\n'
                 with open('bg.txt','a') as f:
                     f.write(line)
+
+    print("Creando carpeta info")
+    print("\n")
+    if not os.path.exists('info'):
+        os.makedirs('info')
+
+    print("Creando carpeta pos")
+    print("\n")
+    if not os.path.exists('pos'):
+            os.makedirs('pos')
+
+    print("Programa finalizado")
+    print("\n")
 create_pos_n_neg()
